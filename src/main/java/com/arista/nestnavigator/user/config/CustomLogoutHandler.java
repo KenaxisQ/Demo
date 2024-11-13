@@ -20,6 +20,7 @@ public class CustomLogoutHandler implements LogoutHandler {
     private final JwtService jwtService;
     private final UserRepository userRepository;
 
+     @Autowired
     public CustomLogoutHandler(TokenRepository tokenRepository, JwtService jwtService, UserRepository userRepository) {
         this.tokenRepository = tokenRepository;
         this.jwtService = jwtService;
