@@ -18,13 +18,12 @@ import org.springframework.http.HttpStatus;
 public class CustomLogoutHandler implements LogoutHandler {
 
     private final TokenRepository tokenRepository;
-    private final JwtService jwtService;
+    private  JwtService jwtService;
     private final UserRepository userRepository;
 
     @Autowired
-    public CustomLogoutHandler(TokenRepository tokenRepository, JwtService jwtService, UserRepository userRepository) {
-        this.tokenRepository = tokenRepository;
-        this.jwtService = jwtService;
+    public CustomLogoutHandler(TokenRepository tokenRepository, UserRepository userRepository) {
+        this.tokenRepository = tokenRepository;;
         this.userRepository = userRepository;
     }
 
