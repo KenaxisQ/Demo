@@ -29,16 +29,18 @@ public class SecurityConfig {
 
     private final CustomLogoutHandler logoutHandler;
 
+
+    private final AuthEntryPointJwt unauthorizedHandler;
+
     @Autowired
-    private AuthEntryPointJwt unauthorizedHandler;
-
-
     public SecurityConfig(UserDetailsServiceImp userDetailsServiceImp,
                           JwtAuthenticationFilter jwtAuthenticationFilter,
-                          CustomLogoutHandler logoutHandler) {
+                          CustomLogoutHandler logoutHandler,
+                          AuthEntryPointJwt unauthorizedHandler) {
         this.userDetailsServiceImp = userDetailsServiceImp;
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.logoutHandler = logoutHandler;
+        this.unauthorizedHandler = unauthorizedHandler;
     }
 
     @Bean

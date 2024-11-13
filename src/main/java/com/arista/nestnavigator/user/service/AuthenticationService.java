@@ -9,6 +9,7 @@ import com.arista.nestnavigator.user.utils.ApiException;
 import com.arista.nestnavigator.user.utils.ErrorCodes;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,7 @@ public class AuthenticationService {
 
     private final AuthenticationManager authenticationManager;
 
+    @Autowired
     public AuthenticationService(UserRepository repository,
                                  PasswordEncoder passwordEncoder,
                                  JwtService jwtService,
