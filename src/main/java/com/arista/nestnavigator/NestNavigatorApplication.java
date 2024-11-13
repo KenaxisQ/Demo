@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class NestNavigatorApplication implements CommandLineRunner {
-//    @Autowired
+    @Autowired
     AuthenticationService authenticationService;
 
     public static void main(String[] args){
