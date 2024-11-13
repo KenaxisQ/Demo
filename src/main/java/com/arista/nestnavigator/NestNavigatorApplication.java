@@ -10,15 +10,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class NestNavigatorApplication implements CommandLineRunner {
-//    @Autowired
-//    AuthenticationService authenticationService;
 
+    private final AuthenticationService authenticationService;
+    public NestNavigatorApplication(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
     public static void main(String[] args){
         SpringApplication.run(NestNavigatorApplication.class, args);
     }
     @Override
     public void run(String ...args){
-//    User user = new User("Siddu","Tammireddy","abc@gmail.com","9876543210","sidda_sai","password");
-//    authenticationService.register(user);
+    User user = new User("Siddu","Tammireddy","abc@gmail.com","9876543210","sidda_sai","password");
+    authenticationService.register(user);
     }
 }
